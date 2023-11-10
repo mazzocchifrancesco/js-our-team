@@ -1,8 +1,8 @@
 // Utilizzando i dati forniti (nel prossimo messaggio), creare un array di oggetti per rappresentare i membri del team.
 // Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
 
-const container= document.getElementById("container");
-const percorsoFoto="./img/";
+const container = document.getElementById("container");
+const percorsoFoto = "./img/";
 
 // MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
 const team = [
@@ -43,14 +43,32 @@ const team = [
 // BONUS 1: Trasformare la stringa foto in una immagine effettiva
 for (let i = 0; i < team.length; i++) {
     console.log(`nome membro: ${team[i].nome}, ruolo membro: ${team[i].ruolo}, percorso immagine: ( ${team[i].foto} )`);
-    const membro=`nome membro: ${team[i].nome}, ruolo membro: ${team[i].ruolo}, percorso immagine: ( ${team[i].foto} )`;
-    stringaMembro=document.createElement("div");
-    stringaMembro.innerText=membro;
-    container.appendChild(stringaMembro);
-    immagineMembro=document.createElement("img");
-    immagineMembro.id=[team[i].nome.substring("0", "3")]+i;
-    immagineMembro.src=[percorsoFoto+team[i].foto]
-    container.appendChild(immagineMembro);
+
+    // creazione scheda membro  
+    const scheda = document.createElement("div");
+    scheda.classList.add("scheda","col-4");
+
+    // creazione immagine, assegnazione id e modifica sorgente
+    immagineMembro = document.createElement("img");
+    immagineMembro.id = [team[i].nome.substring("0", "3")] + i;
+    immagineMembro.src = [percorsoFoto + team[i].foto]
+    scheda.append(immagineMembro);
+
+    // aggiunta nome e ruolo
+    const nome = team[i].nome;
+    const ruolo = team[i].ruolo;
+    const percorsoImmagine = team[i].foto;
+    const NomeMembro = document.createElement("p")
+    NomeMembro.innerText = nome;
+    const ruoloMembro = document.createElement("p")
+    ruoloMembro.innerText = ruolo;
+
+    container.appendChild(scheda);
+    scheda.append(NomeMembro, ruoloMembro);
+
+
+
+
 
 
 }
