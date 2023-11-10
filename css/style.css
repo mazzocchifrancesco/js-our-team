@@ -3,5 +3,24 @@
     flex-direction: column;
     background-color: white;
     text-align: center;
+    color: rgb(100, 100, 100);
+    margin: 3rem 0;
+    width: calc((100% / 3) - 1rem);
+    padding: 0;
 }
 
+.nomi {
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 1rem;
+}
+.ruoli {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 1rem;
+
+}
+#titolo {
+    color: rgb(100, 100, 100);
+
+}

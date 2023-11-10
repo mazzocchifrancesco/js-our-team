@@ -46,7 +46,7 @@ for (let i = 0; i < team.length; i++) {
 
     // creazione scheda membro  
     const scheda = document.createElement("div");
-    scheda.classList.add("scheda","col-4");
+    scheda.classList.add("scheda");
 
     // creazione immagine, assegnazione id e modifica sorgente
     immagineMembro = document.createElement("img");
@@ -60,8 +60,11 @@ for (let i = 0; i < team.length; i++) {
     const percorsoImmagine = team[i].foto;
     const NomeMembro = document.createElement("p")
     NomeMembro.innerText = nome;
+    NomeMembro.classList.add("nomi");
     const ruoloMembro = document.createElement("p")
     ruoloMembro.innerText = ruolo;
+    ruoloMembro.classList.add("ruoli");
+
 
     container.appendChild(scheda);
     scheda.append(NomeMembro, ruoloMembro);
