@@ -2,6 +2,7 @@
 // Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
 
 const container= document.getElementById("container");
+const percorsoFoto="./img/";
 
 // MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
 const team = [
@@ -39,14 +40,18 @@ const team = [
 
 // MILESTONE 1: Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 // MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
+// BONUS 1: Trasformare la stringa foto in una immagine effettiva
 for (let i = 0; i < team.length; i++) {
     console.log(`nome membro: ${team[i].nome}, ruolo membro: ${team[i].ruolo}, percorso immagine: ( ${team[i].foto} )`);
     const membro=`nome membro: ${team[i].nome}, ruolo membro: ${team[i].ruolo}, percorso immagine: ( ${team[i].foto} )`;
-    stringaUtente=document.createElement("div");
-    stringaUtente.innerText=membro;
-    container.appendChild(stringaUtente);
+    stringaMembro=document.createElement("div");
+    stringaMembro.innerText=membro;
+    container.appendChild(stringaMembro);
+    immagineMembro=document.createElement("img");
+    immagineMembro.id=[team[i].nome.substring("0", "3")]+i;
+    immagineMembro.src=[percorsoFoto+team[i].foto]
+    container.appendChild(immagineMembro);
+
+
 }
-
-
-// BONUS 1: Trasformare la stringa foto in una immagine effettiva
 // BONUS 2: Organizzare i singoli membri in card/schede
